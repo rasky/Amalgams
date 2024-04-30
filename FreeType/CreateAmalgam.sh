@@ -1,12 +1,14 @@
 #!/bin/bash
 
+set -euo pipefail
+
 # NOTE: The initial working directory must be
 #       in the same location as the script
 
 SRC=freetype
 DEST=FreeTypeAmalgam
 OPTS=(
-  -i "$SRC" -i "${SRC}/include" -i "${SRC}/src/gzip" -s -w '*.c;*.h'
+  -i "$SRC" -i "${SRC}/include" -i "${SRC}/include/freetype/internal" -i "${SRC}/src/gzip" -s -w '*.c;*.h'
   -d 'FT_CONFIG_CONFIG_H=<freetype/config/ftconfig.h>'
   -d 'FT_CONFIG_STANDARD_LIBRARY_H=<freetype/config/ftstdlib.h>'
   -d 'FT_CONFIG_OPTIONS_H=<freetype/config/ftoption.h>'
@@ -38,6 +40,7 @@ OPTS=(
   -d 'FT_CACHE_IMAGE_H=<freetype/ftcache.h>'
   -d 'FT_CACHE_SMALL_BITMAPS_H=<freetype/ftcache.h>'
   -d 'FT_CACHE_CHARMAP_H=<freetype/ftcache.h>'
+  -d 'FT_LOGGING_H=<freetype/ftlogging.h>'
   -d 'FT_MAC_H=<freetype/ftmac.h>'
   -d 'FT_MULTIPLE_MASTERS_H=<freetype/ftmm.h>'
   -d 'FT_SFNT_NAMES_H=<freetype/ftsnames.h>'

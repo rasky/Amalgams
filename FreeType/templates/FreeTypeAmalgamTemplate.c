@@ -23,18 +23,21 @@
 #endif
 
 /*#define FT_CONFIG_OPTION_PIC*/
+#define TT_CONFIG_OPTION_GPOS_KERNING
 
 /*
  * These files appear inside conditional compilation directives
  *
  */
 
+#include FT_LOGGING_H
+#include FT_BITMAP_H
+
 #include "src/autofit/aftypes.h"
 #include "src/autofit/afdummy.h"
 #include "src/autofit/aflatin.h"
 #include "src/autofit/afcjk.h"
 #include "src/autofit/afindic.h"
-#include "src/cff/cfftypes.h"
 #include "src/cff/cffparse.h"
 #include "src/sfnt/ttcmap.h"
 #include "src/sfnt/ttbdf.h"
@@ -50,6 +53,7 @@
 #include FT_SERVICE_CID_H
 #include FT_SERVICE_TRUETYPE_GLYF_H
 #include FT_SERVICE_PROPERTIES_H
+
 
 /*
  * Sources
@@ -72,6 +76,7 @@
 #include "src/base/ftstroke.c"
 #include "src/base/ftsystem.c"
 #include "src/smooth/smooth.c"
+#undef ONE_PIXEL
 
 /*
  * Modules
@@ -96,6 +101,8 @@
 #include "src/cid/type1cid.c"
 #include "src/type42/type42.c"
 #include "src/winfonts/winfnt.c"
+#include "src/svg/svg.c"
+#include "src/sdf/sdf.c"
 
 /*
  * GZip
@@ -110,6 +117,7 @@
 #undef USE_ZLIB_ZCALLOC
 #undef MY_ZCALLOC
 #define MY_ZCALLOC /* prevent all zcalloc() & zfree() in zutils.c */
+#define ZEXTERN static
 #include "src/gzip/zlib.h"
 #undef NO_DUMMY_DECL
 #undef MY_ZCALLOC
