@@ -31,6 +31,11 @@
 #include FT_GASP_H
 #include FT_GLYPH_H
 #include FT_OUTLINE_H
+#include FT_STROKER_H
+
+#include FT_OTSVG_H
+#include FT_COLOR_H
+#include FT_MODAPI_H
 
 #ifdef _MSC_VER
 #pragma pop_macro("_CRT_SECURE_NO_WARNINGS")
