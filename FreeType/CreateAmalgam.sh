@@ -39,6 +39,7 @@ OPTS=(
   -d 'FT_COLOR_H=<freetype/ftcolor.h>'
   -d 'FT_OTSVG_H=<freetype/otsvg.h>'
   -d 'FT_MODAPI_H=<freetype/ftmodapi.h>'
+  -d 'FT_MM_H=<freetype/ftmm.h>'
   -d 'FT_CACHE_H=<freetype/ftcache.h>'
   -d 'FT_CACHE_IMAGE_H=<freetype/ftcache.h>'
   -d 'FT_CACHE_SMALL_BITMAPS_H=<freetype/ftcache.h>'

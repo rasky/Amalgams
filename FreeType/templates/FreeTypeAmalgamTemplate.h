@@ -36,6 +36,7 @@
 #include FT_OTSVG_H
 #include FT_COLOR_H
 #include FT_MODAPI_H
+#include FT_MM_H
 
 #ifdef _MSC_VER
 #pragma pop_macro("_CRT_SECURE_NO_WARNINGS")
